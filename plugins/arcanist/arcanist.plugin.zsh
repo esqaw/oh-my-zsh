@@ -10,8 +10,8 @@ arc_quick_diff () {
 arc_quick_update () {
   git commit -a -m "$1"
   all_arguments="$*"
-  remaining_arguments=${all_arguments#*"$2"}
-  arc diff --allow-untracked -m "$1" $remaining_arguments
+  remaining_arguments=${all_arguments#*"$1"}
+  echo "arc diff $remaining_arguments --allow-untracked -m '$1'" | zsh
 }
 
 
